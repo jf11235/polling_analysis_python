@@ -15,6 +15,7 @@ budget_csv = os.path.join("/Users/joshuafeinberg/Documents/U-of-O-Bootcamp/Bootc
 with open(budget_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
 
+#splitting the two columns into seperate lists
     for row in csvreader:
         date.append(row[0])
         profloss.append(row[1])
@@ -32,12 +33,11 @@ with open(budget_csv) as csvfile:
         profloss[i] = int(profloss[i])
         total = total + (profloss[i])
     print(f'The total profit/loss for this period is: ${total}')
+
 #calculating the difference between months and adding it to a list
     for i in range(0, len(profloss)-1):
         difference = (profloss[i+1]) - (profloss[i])
         changes.append(difference)
-
-    
 
 #removing the first element in date to make a dictionary for dates: changes
     date.pop(0)
