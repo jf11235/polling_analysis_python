@@ -23,14 +23,16 @@ with open(budget_csv) as csvfile:
     print ("This data set has " + str(len(date)) + " months.") 
 
     #print(date[0])
-    #print(profloss[0])
+    #print(type(profloss[0]))
     
     for i in range(0, len(profloss)):
         profloss[i] = int(profloss[i])
         total = total + (profloss[i])
+    
+    for i in range(0, len(profloss)-1):
         difference = (profloss[i+1]) - (profloss[i])
         changes.append(difference)
-    print(changes[0])
+    print(changes)
 
     #print(f' The total profit/loss is ${total}')
 
