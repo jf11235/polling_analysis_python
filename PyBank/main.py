@@ -66,10 +66,14 @@ with open(budget_csv) as csvfile:
     keyMin = min(mo2mo, key= lambda x: mo2mo[x])
     for key, value in mo2mo.items():
         if key == keyMin:
-            print(f'The maximum decrease in profits was: {key} ${value} ')
+            print(f'The maximum decrease in profits was: {key} ${value}')
     
 
-    
+with open(output_file,"w") as datafile:
+    writer = csv.writer(datafile)
+    writer.writerow()
+
+
 
     
     
