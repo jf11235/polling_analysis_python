@@ -6,7 +6,6 @@ profloss = []
 changes = []
 total = 0
 totalChange = 0 
-dateChange = []
 mo2mo = {}
 
 
@@ -26,7 +25,7 @@ with open(budget_csv) as csvfile:
 
 #printing how many months are in the data set
     dataLen = len(date)
-    print ("This data set has " + str(len(date)) + " months.") 
+    countMonths = "This data set has " + str(len(date)) + " months." 
     
 #calculating total profit/loss
     for i in range(0, len(profloss)):
@@ -50,7 +49,6 @@ with open(budget_csv) as csvfile:
     for i in range(0, len(changes)):
         totalChange = totalChange + changes[i] 
     avChange = totalChange/len(changes)
-
     print(f'The average change from month to month for this dataset is: {round((avChange),2)}')
 
 #getting the month with the maximum increase
@@ -58,7 +56,6 @@ with open(budget_csv) as csvfile:
 
     for key,value in mo2mo.items():
         if key == keyMax:
-
             print(f'The month with the greatest increase was: {key} ${value}')
     
 
@@ -69,17 +66,17 @@ with open(budget_csv) as csvfile:
             print(f'The maximum decrease in profits was: {key} ${value}')
     
 
-with open(output_file,"w") as datafile:
-    writer = csv.writer(datafile)
-    writer.writerow()
+outputCSV = ("countMonths",)
+
+#writing outcomes to csv file
+#with open(output_file,"w") as datafile:
+    #writer = csv.writer(datafile)
+    #for row in writer.writerow()
 
 
 
     
     
-    
-
-    #print(f' The total profit/loss is ${total}')
 
 
 
