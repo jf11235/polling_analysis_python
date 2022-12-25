@@ -4,12 +4,16 @@ import csv
 date = []
 profloss = []
 changes = []
+outputlist = []
 total = 0
 totalChange = 0 
 mo2mo = {}
 
+def print_to_terminal_and_file(f, *args, **kwargs):
+    return print(*args, **kwargs), print(*args, file=f, **kwargs)
 
-budget_csv = os.path.join("/Users/joshuafeinberg/Documents/U-of-O-Bootcamp/Bootcamp_Class_Folder/Module_Challenges/Module 3 Challange/PyBank/Resources/budget_data.csv")
+
+budget_csv = os.path.join("/Users/joshuafeinberg/Documents/python-challenge/PyBank/Resources/budget_data.csv")
 
 with open(budget_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
@@ -23,15 +27,19 @@ with open(budget_csv) as csvfile:
     date.pop(0)
     profloss.pop(0)
 
+output_file = os.path.join("/Users/joshuafeinberg/Documents/python-challenge/PyBank/Resources/analysis.txt")
+#writing outcomes to csv file
+with open(output_file,"w") as datafile:
+
 #printing how many months are in the data set
     dataLen = len(date)
-    countMonths = "This data set has " + str(len(date)) + " months." 
-    
+    print_to_terminal_and_file(datafile, f"This data set has {len(date)}  months.")
+
 #calculating total profit/loss
     for i in range(0, len(profloss)):
         profloss[i] = int(profloss[i])
         total = total + (profloss[i])
-    print(f'The total profit/loss for this period is: ${total}')
+    print_to_terminal_and_file(datafile, f'The total profit/loss for this period is: ${total}')
 
 #calculating the difference between months and adding it to a list
     for i in range(0, len(profloss)-1):
@@ -49,32 +57,43 @@ with open(budget_csv) as csvfile:
     for i in range(0, len(changes)):
         totalChange = totalChange + changes[i] 
     avChange = totalChange/len(changes)
-    print(f'The average change from month to month for this dataset is: {round((avChange),2)}')
+    print_to_terminal_and_file(datafile, f'The average change from month to month for this dataset is: {round((avChange),2)}')
 
 #getting the month with the maximum increase
     keyMax = max(mo2mo, key= lambda x: mo2mo[x])
 
     for key,value in mo2mo.items():
         if key == keyMax:
-            print(f'The month with the greatest increase was: {key} ${value}')
+            print_to_terminal_and_file(datafile, f'The month with the greatest increase was: {key} ${value}')
     
 
 #getting the month with the maximum decrease
     keyMin = min(mo2mo, key= lambda x: mo2mo[x])
     for key, value in mo2mo.items():
         if key == keyMin:
-            print(f'The maximum decrease in profits was: {key} ${value}')
+            print_to_terminal_and_file(datafile, f'The maximum decrease in profits was: {key} ${value}')
     
 
-outputCSV = ("countMonths",)
+#output varaibles
+#totaltxt = "The total profit/loss for this period is: $22564198"
+#avgtxt = "The average change from month to month for this dataset is: -8311.11"
+#gr8Inctxt = "The month with the greatest increase was: Aug-16 $1862002"
+#gr8Dectxt = "The maximum decrease in profits was: Feb-14 $-1825558"
 
-#writing outcomes to csv file
-#with open(output_file,"w") as datafile:
-    #writer = csv.writer(datafile)
+#outputlist.append(totaltxt)
+#outputlist.append(avgtxt)
+#outputlist.append(gr8Inctxt)
+#outputlist.append(gr8Dectxt)
+
+
+
+
+
+    
     #for row in writer.writerow()
 
-
-
+#closing the file
+csvfile.close()
     
     
 
