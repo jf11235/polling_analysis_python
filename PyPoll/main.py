@@ -4,6 +4,7 @@ import csv
 ballotID = []
 county = []
 candidates = []
+eachCandidate = []
 candiDict ={}
 totalVotes = 0
 
@@ -40,10 +41,12 @@ with open(electionCSV) as csvfile:
 
     print("-------------------------")
 
-
-    candiDict = {}
-    for candidate in range(len(candidates)):
-        if candidate != candidate + 1:
+    
+    
+    for candidate in range(len(candidates), -1):
+        if candidate != candidate:
+            eachCandidate.append(candidate)
+    print(eachCandidate[0])
 
 
 
