@@ -40,6 +40,8 @@ with open(electionCSV) as csvfile:
 
     print("-------------------------")
 
+
+    candiDict = {}
     for candidate in range(len(candidates)):
         if candidate != candidate + 1:
 
@@ -55,5 +57,3 @@ with open(electionCSV) as csvfile:
 #output_file = os.path.join("/Users/joshuafeinberg/Documents/python-challenge/PyPoll/analysis/PyPollanalysis.md")
 #writing outcomes to csv file
 #with open(output_file,"w") as datafile:
-
-
