@@ -9,6 +9,7 @@ total = 0
 totalChange = 0 
 mo2mo = {}
 
+#making a function to print to terminal and write to text file in one line
 def print_to_terminal_and_file(f, *args, **kwargs):
     return print(*args, **kwargs), print(*args, file=f, **kwargs)
 
