@@ -5,6 +5,7 @@ ballotID = []
 county = []
 candidates = []
 candiDict ={}
+totalVotes = 0
 
 
 
@@ -33,14 +34,16 @@ with open(electionCSV) as csvfile:
     print("-------------------------")
 
     #counting number of votes:
-    print(f"Total votes: {len(ballotID)}")
+    totalVotes = len(ballotID)
+    print(f"Total votes: {totalVotes}")
     #print_to_terminal_and_file(datafile, f"Total votes: {len(ballotID)}")
 
     print("-------------------------")
 
-    for candidate in candidates:
-        if candidate[i] != candidate[i+1]:
-            
+    for candidate in range(len(candidates)):
+        if candidate != candidate + 1:
+
+
 
 
     
