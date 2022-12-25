@@ -3,7 +3,7 @@ import csv
 
 ballotID = []
 county = []
-candidate = []
+candidates = []
 candiDict ={}
 
 
@@ -23,12 +23,24 @@ with open(electionCSV) as csvfile:
     for row in csvreader:
         ballotID.append(row[0])
         county.append(row[1])
-        candidate.append(row[2])
+        candidates.append(row[2])
     #removing headers
     ballotID.pop(0)
     county.pop(0)
-    candidate.pop(0)
+    candidates.pop(0)
 
+    print("Election Results")
+    print("-------------------------")
+
+    #counting number of votes:
+    print(f"Total votes: {len(ballotID)}")
+    #print_to_terminal_and_file(datafile, f"Total votes: {len(ballotID)}")
+
+    print("-------------------------")
+
+    for candidate in candidates:
+        if candidate[i] != candidate[i+1]:
+            
 
 
     
