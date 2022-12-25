@@ -74,24 +74,6 @@ with open(output_file,"w") as datafile:
             print_to_terminal_and_file(datafile, f'The maximum decrease in profits was: {key} ${value}')
     
 
-#output varaibles
-#totaltxt = "The total profit/loss for this period is: $22564198"
-#avgtxt = "The average change from month to month for this dataset is: -8311.11"
-#gr8Inctxt = "The month with the greatest increase was: Aug-16 $1862002"
-#gr8Dectxt = "The maximum decrease in profits was: Feb-14 $-1825558"
-
-#outputlist.append(totaltxt)
-#outputlist.append(avgtxt)
-#outputlist.append(gr8Inctxt)
-#outputlist.append(gr8Dectxt)
-
-
-
-
-
-    
-    #for row in writer.writerow()
-
 #closing the file
 csvfile.close()
     
