@@ -1,7 +1,10 @@
 import os
 import csv
 
-
+ballotID = []
+county = []
+candidate = []
+candiDict ={}
 
 
 
@@ -10,12 +13,25 @@ def print_to_terminal_and_file(f, *args, **kwargs):
     return print(*args, **kwargs), print(*args, file=f, **kwargs)
 
 
-electionCSV = os.path.join(/Users/joshuafeinberg/Documents/python-challenge/PyPoll/Resources/election_data.csv)
+electionCSV = os.path.join("/Users/joshuafeinberg/Documents/python-challenge/PyPoll/Resources/election_data.csv")
 
 with open(electionCSV) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
 
+   
+#seperating the columns into 3 lists
     for row in csvreader:
+        ballotID.append(row[0])
+        county.append(row[1])
+        candidate.append(row[2])
+    #removing headers
+    ballotID.pop(0)
+    county.pop(0)
+    candidate.pop(0)
+
+
+
+    
 
 
 
@@ -25,4 +41,4 @@ with open(electionCSV) as csvfile:
 #writing outcomes to csv file
 #with open(output_file,"w") as datafile:
 
-    
+
