@@ -35,9 +35,9 @@ with open(electionCSV) as csvfile:
     ballotID.pop(0)
     county.pop(0)
     candidates.pop(0)
-    
+
 #output_file = os.path.join("/Users/joshuafeinberg/Documents/python-challenge/PyPoll/analysis/PyPollanalysis.md")
-#writing outcomes to csv file
+#writing outcomes to txt file
 #with open(output_file,"w") as datafile:
 
     print("Election Results")
