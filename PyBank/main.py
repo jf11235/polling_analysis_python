@@ -29,7 +29,7 @@ with open(budget_csv) as csvfile:
     profloss.pop(0)
 
 output_file = os.path.join("/Users/joshuafeinberg/Documents/python-challenge/PyBank/Resources/analysis.txt")
-#writing outcomes to csv file
+#writing outcomes to txt file
 with open(output_file,"w") as datafile:
 
 #printing how many months are in the data set
