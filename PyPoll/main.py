@@ -43,11 +43,16 @@ with open(electionCSV) as csvfile:
 
     
     
-    for candidate in range(len(candidates), -1):
-        if candidate != candidate:
-            eachCandidate.append(candidate)
-    print(eachCandidate[0])
+    for i in range(len(candidates)):
+        if candidates[i] == candidates[i+1]:
+            totalVotes += 1
+            candiDict = {candidates[i]: totalVotes}
+            
+        else:
+            totalVotes = 0
 
+    print(candiDict)
+    
 
 
 
