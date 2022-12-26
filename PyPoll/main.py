@@ -8,6 +8,9 @@ eachCandidate = []
 candiDict ={}
 candiPerc = {}
 totalVotes = 0
+doaneVotes = 0
+stockhamVotes = 0
+degetteVotes = 0
 doaneVotePer = 0
 stockhamVotePer = 0
 degetteVotePer = 0
@@ -57,13 +60,25 @@ with open(electionCSV) as csvfile:
     for i in eachCandidate:
         candiDict[i] = candidates.count(i)
 
-    
-    doaneVotePer = candiDict ["Raymon Anthony Doane"]/totalVotes
-    stockhamVotePer = candiDict ["Charles Casper Stockham"]/totalVotes
-    degetteVotePer = candiDict ["Diana DeGette"]/totalVotes
+    #storing vote counts
+    doaneVotes = candiDict ["Raymon Anthony Doane"]
+    stockhamVotes = candiDict ["Charles Casper Stockham"]
+    degetteVotes = candiDict ["Diana DeGette"] 
 
-    
+    #calculating percentages
+    doaneVotePer = doaneVotes/totalVotes * 100
+    stockhamVotePer = stockhamVotes/totalVotes * 100
+    degetteVotePer = degetteVotes/totalVotes * 100
 
+    print(f'Charles Casper Stockham : {round(stockhamVotePer,3)}% ({stockhamVotes})')
+    print(f'Diana DeGette: {round(degetteVotePer,3)}% ({degetteVotes})')
+    print(f'Raymon Anthony Doane: {round(doaneVotePer,3)}% ({doaneVotes})')
+
+    print("-------------------------")
+
+    print(f'Winner: Diana DeGette')
+
+    print("-------------------------")
 
 
     
