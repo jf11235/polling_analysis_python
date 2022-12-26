@@ -39,19 +39,19 @@ with open(electionCSV) as csvfile:
     county.pop(0)
     candidates.pop(0)
 
-#output_file = os.path.join("/Users/joshuafeinberg/Documents/python-challenge/PyPoll/analysis/PyPollanalysis.md")
+output_file = os.path.join("/Users/joshuafeinberg/Documents/python-challenge/PyPoll/analysis/PyPollanalysis.md")
 #writing outcomes to txt file
-#with open(output_file,"w") as datafile:
+with open(output_file,"w") as datafile:
 
-    print("Election Results")
-    print("-------------------------")
+    print_to_terminal_and_file(datafile, "Election Results")
+    print_to_terminal_and_file(datafile, "-------------------------")
 
     #counting number of votes:
     totalVotes = len(ballotID)
-    print(f"Total votes: {totalVotes}")
-    #print_to_terminal_and_file(datafile, f"Total votes: {len(ballotID)}")
+    #print(f"Total votes: {totalVotes}")
+    print_to_terminal_and_file(datafile, f"Total votes: {len(ballotID)}")
 
-    print("-------------------------")
+    print_to_terminal_and_file(datafile, "-------------------------")
     #removes duplicates from candidates
     eachCandidate = set(candidates)
     
@@ -70,15 +70,15 @@ with open(electionCSV) as csvfile:
     stockhamVotePer = stockhamVotes/totalVotes * 100
     degetteVotePer = degetteVotes/totalVotes * 100
 
-    print(f'Charles Casper Stockham : {round(stockhamVotePer,3)}% ({stockhamVotes})')
-    print(f'Diana DeGette: {round(degetteVotePer,3)}% ({degetteVotes})')
-    print(f'Raymon Anthony Doane: {round(doaneVotePer,3)}% ({doaneVotes})')
+    print_to_terminal_and_file(datafile, f'Charles Casper Stockham : {round(stockhamVotePer,3)}% ({stockhamVotes})')
+    print_to_terminal_and_file(datafile, f'Diana DeGette: {round(degetteVotePer,3)}% ({degetteVotes})')
+    print_to_terminal_and_file(datafile, f'Raymon Anthony Doane: {round(doaneVotePer,3)}% ({doaneVotes})')
 
-    print("-------------------------")
+    print_to_terminal_and_file(datafile, "-------------------------")
 
-    print(f'Winner: Diana DeGette')
+    print_to_terminal_and_file(datafile, f'Winner: Diana DeGette')
 
-    print("-------------------------")
+    print_to_terminal_and_file(datafile, "-------------------------")
 
 
     
