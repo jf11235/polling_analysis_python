@@ -40,18 +40,31 @@ with open(electionCSV) as csvfile:
     #print_to_terminal_and_file(datafile, f"Total votes: {len(ballotID)}")
 
     print("-------------------------")
+    #removes duplicates from candidates
+    eachCandidate = set(candidates)
+    #this doesnt work
+    #candiDict = {eachCandidate[i]: totalVotes for i in range(len(candiDict))}
+    
 
-    
-    
-    for i in range(len(candidates)):
-        if candidates[i] == candidates[i+1]:
-            totalVotes += 1
-            candiDict = {candidates[i]: totalVotes}
-            
-        else:
-            totalVotes = 0
+    for i in eachCandidate:
+        candiDict[i] = candidates.count(i)
 
     print(candiDict)
+
+
+        
+
+    #for i in range(len(candidates)):
+    #    if candidates[i] != candidates[i+1]:
+    #        totalVotes += 1
+            #candiDict = {candidates[i]: totalVotes}
+    #        totalVotes = 0
+
+    #    else:
+    #        totalVotes += 1
+            #candiDict = {candidates[i]: totalVotes}
+
+    #print(candiDict)
     
 
 
